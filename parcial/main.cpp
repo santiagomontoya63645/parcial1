@@ -17,6 +17,7 @@ int main()
     bool m;
     float t=2.5;
     float ydo=0,yD;
+    float distancia=0;
     int f=0,anguloD,angulodo=0;
     while (true){
         cout<<"ingrese posicion de disparo Xo menor a 10"<<endl;cin>>xdo;
@@ -30,12 +31,14 @@ int main()
         cout<<"ingrese angulo de el cañon agresivo"<<endl;cin>>anguloD;
         auxxD=xD;
         auxyD=yD;
-
+        f=0;
 
         while(f==0){
+            m=boom(xdo,xD);
             xdo=posicionx(xdo,angulodo,tiempo,velocidadxO);
             ydo=posiciony(ydo,angulodo,tiempo,velocidadxO);
             tiempo++;
+            distancia=xD-xdo;
             m=boom(xdo,xD);
            // if (tiempo>=2){
              //   m=boom(xdo,xD);
@@ -58,7 +61,7 @@ int main()
 }
 bool boom(float a, float b){
 
-    if(a<=0.05*b){
+    if(a>=0.05*b){
         return true;
     }
     else{
