@@ -18,7 +18,7 @@ int main()
     float t=2.5;
     float ydo=0,yD;
     float distancia=0;
-    int f=0,anguloD,angulodo=0;
+    int f=0,anguloD,angulodo=0,cont=0;
     while (true){
         cout<<"ingrese posicion de disparo Xo menor a 10"<<endl;cin>>xdo;
         cout<<"ingrese posicion de disparo Yo"<<endl;cin>>ydo;
@@ -54,6 +54,11 @@ int main()
         }
         else{
             cout<<"dios esta aqui esta aqui tanccerca como el aire que respirooooo"<<endl;
+            cont++;
+        }
+        if (cont>15){
+            cout<<"esa bala nunca le dara"<<endl;
+            f=1;
         }
      }
     }
