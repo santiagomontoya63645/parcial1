@@ -1,12 +1,15 @@
 #include <iostream>
+#include <math.h>
 //d debe tener posiciocon fija
 using namespace std;
 bool verificadordeposicionparadisparar(int a, int b);
-int disparodo(int x, int y, int angulo);
+int posicionx(int x, int angulo, int tiempo, int velocidad);
+float posiciony(int y, int angulo, int tiempo,int velocidad);
 int main()
 {
-    int xdo=0, ydo=0, angulodo=0,vdo=0,xD,yD;
+    int xdo=0,  angulodo=0,vdo=0,xD,tiempo=0,velocidadxO=3, velocidadxD=10;
     bool m;
+    float ydo=0,yD;
     while (true){
         cout<<"ingrese posicion de disparo Xo"<<endl;cin>>xdo;
         cout<<"ingrese posicion de disparo Yo"<<endl;cin>>ydo;
@@ -31,8 +34,13 @@ bool verificadordeposicionparadisparar(int a, int b){
         return false;
     }
 }
-int disparodo(int x, int y, int angulo){
-    int t=0,posx=0,posy=0,velocidadxO=3, velocidadxD=10;
-    posx=x+velocidadxO*t;
-    t++
+int posicionx(int x, int angulo,int tiempo, int velocidad){
+    int posx=0;
+    posx=x+velocidad*cos(angulo)*tiempo;
+    return posx;
+}
+float posiciony(int y, int angulo, int tiempo, int velocidad){
+    float posy=0;
+    posy=y+(velocidad*sin(angulo)-9.8*tiempo)-9.8/2*tiempo*tiempo;
+    return posy;
 }
